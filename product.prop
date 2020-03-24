@@ -1,6 +1,10 @@
 # Bluetooth
 ro.bluetooth.library_name=libbluetooth_qti.so
 
+# Audio (Dolby)
+debug.stagefright.omx_default_rank.sw-audio=16
+ro.control_privapp_permissions=log
+
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
 
