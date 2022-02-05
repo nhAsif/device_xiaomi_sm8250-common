@@ -22,8 +22,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.util.Log;
+import androidx.preference.PreferenceManager;
+
+import org.lineageos.settings.utils.FileUtils;
 
 import org.lineageos.settings.sensors.PickupSensor;
 
@@ -43,10 +47,20 @@ public class DozeService extends Service {
         }
     };
 
+    private static final String DC_DIMMING_NODE = "/sys/devices/platform/soc/soc:qcom,dsi-display/msm_fb_ea_enable";
+    private static final String DC_DIMMING_ENABLE_KEY = "dc_dimming_enable";
+    private static final String HBM_NODE = "/sys/devices/platform/soc/soc:qcom,dsi-display/hbm";
+    private static final String HBM_ENABLE_KEY = "hbm_mode";
+    private boolean enableDc;
+    private boolean enableHbm;
+
+    private SharedPreferences sharedPrefs;
+
     @Override
     public void onCreate() {
         if (DEBUG) Log.d(TAG, "Creating service");
         mPickupSensor = new PickupSensor(this);
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         IntentFilter screenStateFilter = new IntentFilter();
         screenStateFilter.addAction(Intent.ACTION_SCREEN_ON);
@@ -83,7 +97,22 @@ public class DozeService extends Service {
     private void onDisplayOff() {
         if (DEBUG) Log.d(TAG, "Display off");
         if (DozeUtils.isPickUpEnabled(this)) {
+        enableNode(false);
+        if (DozeUtils.isPickUpEnabled(this) ||
+                DozeUtils.isRaiseToWakeEnabled(this)) {
             mPickupSensor.enable();
         }
     }
+
+    private void enableNode(boolean status) {
+        enableDc = (sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false));
+        enableHbm = (sharedPrefs.getBoolean(HBM_ENABLE_KEY, false));
+        if (enableDc) {
+            FileUtils.writeLine(DC_DIMMING_NODE, status ? "1" : "0");
+        }
+        if (enableHbm) {
+            FileUtils.writeLine(HBM_NODE, status ? "1" : "0");
+        }
+    }
+
 }
