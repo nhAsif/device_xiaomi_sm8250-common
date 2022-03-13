@@ -362,8 +362,8 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3QuickStep \
     Settings \
     SystemUI \
-    Nexuslauncher \
-    lawnchair
+    NexusLauncherRelease \
+    Lawnchair
 
 # Fingerprint
 ifeq ($(TARGET_HAS_FOD),true)
