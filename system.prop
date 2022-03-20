@@ -103,6 +103,10 @@ ro.config.sdha_apps_bg_max=64
 ro.config.sdha_apps_bg_min=8
 ro.config.avoid_gfx_accel=true
 
+#Enable Blur 
+ro.surface_flinger.supports_background_blur=1	
+ro.sf.blurs_are_expensive=1
+
 # ZRAM
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=1440
