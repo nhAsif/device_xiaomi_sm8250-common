@@ -1,0 +1,3 @@
+# Allow devicesettings_app to read and write sysfs nodes
+
+allow devicesettings_app vendor_sysfs_graphics:dir { search read open getattr write };
