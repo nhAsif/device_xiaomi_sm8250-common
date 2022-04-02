@@ -61,6 +61,8 @@ persist.vendor.data.mode=concurrent
 
 # IORap
 ro.iorapd.enable=true
+iorapd.perfetto.enable=true
+iorapd.readahead.enable=true
 
 # SSR
 persist.vendor.ssr.enable_ramdumps=1
