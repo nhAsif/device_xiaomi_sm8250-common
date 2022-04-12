@@ -1,0 +1,3 @@
+allow mediaprovider mediametrics_service:service_manager { find };
+allow mediaprovider selinuxfs:file { read };
+allow mediaprovider zygote:unix_stream_socket { getopt };

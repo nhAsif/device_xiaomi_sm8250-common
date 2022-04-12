@@ -1,0 +1,1 @@
+allow devicesettings_app default_prop:file { read };
