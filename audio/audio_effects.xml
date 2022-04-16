@@ -105,7 +105,7 @@
 
         </stream>
         <stream type="voice_call">
-
+            <apply effect="voice_helper"/>
         </stream>
         <stream type="notification">
             
@@ -113,7 +113,9 @@
     </postprocess>
     <preprocess>
         <stream type="voice_communication">         
-            
+            <apply effect="aec"/>
+            <apply effect="ns"/>
+
         </stream>
     </preprocess>
 </audio_effects_conf>
