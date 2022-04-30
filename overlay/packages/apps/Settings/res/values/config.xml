@@ -23,4 +23,9 @@
 
     <!-- For Enabling Battery Heath -->
     <bool name="config_supportBatteryHealth">true</bool>
+
+    <!-- Battery health -->
+    <string name="config_batteryCalculatedCapacity">/sys/class/power_supply/bms/charge_full</string>
+    <string name="config_batteryDesignCapacity">/sys/class/power_supply/bms/charge_full_design</string>
+    <string name="config_batteryChargeCycles">/sys/class/power_supply/bms/cycle_count</string>
 </resources>
