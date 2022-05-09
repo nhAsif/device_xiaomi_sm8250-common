@@ -1,4 +1,4 @@
-# Async MTE on system_server
+# Disable Async MTE on system_server
 arm64.memtag.process.system_server=off
 
 # Bluetooth
@@ -77,6 +77,9 @@ debug.hwui.renderer=skiavk
 
 # Disable vsync for cpu rendered apps
 debug.cpurend.vsync=false
+
+#Battery Property
+ro.charger.enable_suspend = 1
 
 # Pre-rendering
 ro.vendor.perf.scroll_opt=true
