@@ -53,3 +53,6 @@ allow untrusted_app proc_max_map_count:file { read };
 allow untrusted_app profman_exec:file { getattr };
 allow untrusted_app rootfs:dir { read };
 allow untrusted_app selinuxfs:file { open };
+
+allow untrusted_app serialno_prop:file { map };
+allow untrusted_app wifi_hal_prop:file { open };
