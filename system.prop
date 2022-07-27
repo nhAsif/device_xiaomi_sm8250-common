@@ -139,10 +139,10 @@ ro.telephony.default_network=33,22
 persist.vendor.data.mode=concurrent
 
 # IORap
-ro.iorapd.enable=true
-iorapd.perfetto.enable=true
-iorapd.readahead.enable=true
-persist.device_config.runtime_native_boot.iorap_readahead_enable=true
+ro.iorapd.enable=false
+iorapd.perfetto.enable=false
+iorapd.readahead.enable=false
+persist.device_config.runtime_native_boot.iorap_readahead_enable=false
 
 # Mi
 ro.mi.development=false
