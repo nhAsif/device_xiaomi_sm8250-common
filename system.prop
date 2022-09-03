@@ -115,7 +115,9 @@ ro.charger.enable_suspend = 1
 arm64.memtag.process.system_server=off
 
 # Disable blur on app launch
-ro.launcher.blur.appLaunch=0
+ro.launcher.blur.appLaunch=0 \
+ro.sf.blurs_are_expensive=0 \
+ro.surface_flinger.supports_background_blur=0
 
 # ZRAM writeback
 ro.zram.mark_idle_delay_mins=60
@@ -128,3 +130,4 @@ ro.spark.maintainer.username= Dark Phoenix
 
 #AvoidGfxAccel 
 ro.config.avoid_gfx_accel=true
+
