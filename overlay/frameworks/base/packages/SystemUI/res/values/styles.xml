@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Design.CollapsingToolbar" parent="@android:style/Widget">
+    <item name="expandedTitleMargin">32.0dip</item>
+    <item name="statusBarScrim">?android:attr/textColorPrimary</item>
+    </style>
+</resources>
