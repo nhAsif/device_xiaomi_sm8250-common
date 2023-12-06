@@ -90,6 +90,9 @@ ro.vendor.qti.core_ctl_min_cpu=2
 # Radio
 persist.vendor.radio.report_codec=1
 
+# Logs
+persist.log.tag.OpenGLRenderer=S
+
 # RIL Powersaving
 persist.radio.add_power_save=1
 pm.sleep_mode=1
