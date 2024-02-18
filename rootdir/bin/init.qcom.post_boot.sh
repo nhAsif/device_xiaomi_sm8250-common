@@ -5762,7 +5762,7 @@ case "$target" in
 
 	# configure input boost settings
 	echo "0:1344000" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
-	echo 120 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
+	echo 200 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
 	echo "0:1804800 1:0 2:0 3:0 4:2419200 5:0 6:0 7:3187200" > /sys/devices/system/cpu/cpu_boost/powerkey_input_boost_freq
 	echo 400 > /sys/devices/system/cpu/cpu_boost/powerkey_input_boost_ms
 
