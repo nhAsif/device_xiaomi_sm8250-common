@@ -153,7 +153,7 @@
     <bool name="config_device_vt_available">true</bool>
 
     <!-- Flag specifying whether WFC over IMS is available on device -->
-    <bool name="config_device_wfc_ims_available">true</bool>
+    <bool name="config_device_wfc_ims_available">false</bool>
 
     <!-- When true, indicates that the vendor's IMS implementation requires a workaround when
      sending a request to enable or disable the camera while the video session is also
